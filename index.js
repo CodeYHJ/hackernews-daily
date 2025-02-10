@@ -1,12 +1,11 @@
-const getHeadlines = require("./utils/getHeadlines");
-const issue = require("./utils/issue");
-
+import issue from './utils/issue.js'
+import { getHeadlines } from './utils/getHeadlines.js';
 // run every day at 00:01 UTC
 const run = async (date) => {
   const contents = await getHeadlines(date);
   console.log(contents);
   const res = await issue.open({
-    owner: "yhj-zone",
+    owner: "CodeYHJ",
     repo: "hackernews-daily",
     title: `Hacker News Daily Point Above 100 @${new Date(date)
       .toISOString()
@@ -26,4 +25,3 @@ const run = async (date) => {
 run(new Date()).catch((err) => {
   throw err;
 });
-// Activate action

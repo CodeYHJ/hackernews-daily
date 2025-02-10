@@ -1,7 +1,6 @@
-const axios = require("axios");
-const timeago = require("timeago.js");
-const { XMLParser } = require("fast-xml-parser");
-const getHeadlines = async (date) => {
+import axios from 'axios'
+import { XMLParser } from 'fast-xml-parser'
+export const getHeadlines = async (date) => {
   console.log("start fetching headlines");
   try {
     const res = await axios.get(`https://hnrss.org/newest?points=100`);
@@ -17,9 +16,8 @@ const getHeadlines = async (date) => {
       const contents = item
         .map((i, index) => {
           const { comments, title, link } = i;
-          return `${
-            index + 1
-          }. **[${title}](${link})** | [comments](${comments})
+          return `${index + 1
+            }. **[${title}](${link})** | [comments](${comments})
 
 `;
         })
@@ -33,4 +31,3 @@ const getHeadlines = async (date) => {
   }
 };
 
-module.exports = getHeadlines;
