@@ -1,0 +1,32 @@
+{
+    "name": "hackernews",
+    "version": "1.0.0",
+    "description": "Hacker News Daily Point Above 100 headlines",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha -u qunit --timeout 15000"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yhj-zone/hackernews-daily.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/yhj-zone/hackernews-daily/issues"
+    },
+    "homepage": "https://github.com/yhj-zone/hackernews-daily#readme",
+    "dependencies": {
+        "@octokit/auth-app": "^2.4.13",
+        "@octokit/core": "^3.1.2",
+        "@octokit/rest": "^20.0.2",
+        "axios": "^1.7.9",
+        "dayjs": "^1.8.32",
+        "fast-xml-parser": "^4.3.1",
+        "timeago.js": "^4.0.2"
+    },
+    "devDependencies": {
+        "mocha": "^8.1.3"
+    }
+}
